@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+
+<% @states.each do |state| %>
+
+
+<p>
+  <b>Page:</b>
+  <%= state.page_id %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= state.body %>
+</p>
+
+
+
+
+<% end %>
+
+<%= link_to 'Back', pages_path %>

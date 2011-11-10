@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+<% @comments.each do |comment| %>
+
+<p>
+  <b>Page:</b>
+  <%= comment.page %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= comment.user %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= comment.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_comment_path(comment) %> |
+<%= link_to 'Back', comments_path %>
+
+<% end %>

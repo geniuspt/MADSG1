@@ -1,0 +1,197 @@
+LOADED SUITE test,test/functional,test/performance,test/unit,test/unit/helpers
+ActionController::TestCase
+ActionDispatch::IntegrationTest
+ActiveRecord::TestCase
+ActiveSupport::TestCase
+CommentsControllerTest
+     test_should_create_comment                                           PASS
+     test_should_destroy_comment                                          PASS
+     test_should_get_comments_by_page                                    ERROR
+        No route matches {:id=>"1", :controller=>"comments", :action=>"get_by_page"}
+        STDERR:
+        Exception `ActionController::RoutingError' at C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:464:in `raise_routing_error'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:460:in `rescue in generate'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:452:in `generate'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:493:in `generate'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:489:in `generate_extras'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:485:in `extra_keys'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:145:in `assign_parameters'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:438:in `process'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:49:in `process'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:365:in `get'
+        test/functional/comments_controller_test.rb:9:in `block in <class:CommentsControllerTest>'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/testing/setup_and_teardown.rb:35:in `block in run'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:444:in `_run_setup_callbacks'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:81:in `run_callbacks'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/testing/setup_and_teardown.rb:34:in `run'
+     test_should_get_edit                                                 PASS
+     test_should_get_index                                                PASS
+     test_should_get_new                                                  PASS
+     test_should_show_comment                                             PASS
+     test_should_update_comment                                           PASS
+HomeControllerTest
+     test_should_get_index                                                PASS
+MiniTest::Spec
+PagesControllerTest
+     test_get_most_recent_state                                          ERROR
+        No route matches {:id=>"1", :controller=>"pages", :action=>"get_last_state"}
+        STDERR:
+        Exception `ActionController::RoutingError' at C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:464:in `raise_routing_error'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:460:in `rescue in generate'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:452:in `generate'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:493:in `generate'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:489:in `generate_extras'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:485:in `extra_keys'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:145:in `assign_parameters'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:438:in `process'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:49:in `process'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:365:in `get'
+        test/functional/pages_controller_test.rb:17:in `block in <class:PagesControllerTest>'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/testing/setup_and_teardown.rb:35:in `block in run'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:444:in `_run_setup_callbacks'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:81:in `run_callbacks'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/testing/setup_and_teardown.rb:34:in `run'
+     test_get_number_of_states                                           ERROR
+        No route matches {:id=>"1", :controller=>"pages", :action=>"get_related_states"}
+        STDERR:
+        Exception `ActionController::RoutingError' at C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:464:in `raise_routing_error'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:460:in `rescue in generate'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:452:in `generate'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:493:in `generate'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:489:in `generate_extras'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:485:in `extra_keys'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:145:in `assign_parameters'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:438:in `process'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:49:in `process'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:365:in `get'
+        test/functional/pages_controller_test.rb:10:in `block in <class:PagesControllerTest>'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/testing/setup_and_teardown.rb:35:in `block in run'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:444:in `_run_setup_callbacks'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:81:in `run_callbacks'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/testing/setup_and_teardown.rb:34:in `run'
+     test_should_create_page                                              PASS
+     test_should_destroy_page                                             PASS
+     test_should_get_edit                                                 PASS
+     test_should_get_index                                                PASS
+     test_should_get_new                                                  PASS
+     test_should_show_page                                                PASS
+     test_should_update_page                                              PASS
+ProjectsControllerTest
+     test_get_number_of_pages                                            ERROR
+        No route matches {:id=>"1", :controller=>"projects", :action=>"get_related_pages"}
+        STDERR:
+        Exception `ActionController::RoutingError' at C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:464:in `raise_routing_error'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:460:in `rescue in generate'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:452:in `generate'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:493:in `generate'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:489:in `generate_extras'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:485:in `extra_keys'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:145:in `assign_parameters'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:438:in `process'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:49:in `process'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:365:in `get'
+        test/functional/projects_controller_test.rb:10:in `block in <class:ProjectsControllerTest>'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/testing/setup_and_teardown.rb:35:in `block in run'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:444:in `_run_setup_callbacks'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:81:in `run_callbacks'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/testing/setup_and_teardown.rb:34:in `run'
+     test_get_number_of_users                                            ERROR
+        No route matches {:id=>"1", :controller=>"projects", :action=>"get_related_users"}
+        STDERR:
+        Exception `ActionController::RoutingError' at C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:464:in `raise_routing_error'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:460:in `rescue in generate'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:452:in `generate'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:493:in `generate'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:489:in `generate_extras'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:485:in `extra_keys'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:145:in `assign_parameters'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:438:in `process'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:49:in `process'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:365:in `get'
+        test/functional/projects_controller_test.rb:17:in `block in <class:ProjectsControllerTest>'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/testing/setup_and_teardown.rb:35:in `block in run'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:444:in `_run_setup_callbacks'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:81:in `run_callbacks'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/testing/setup_and_teardown.rb:34:in `run'
+     test_should_create_project                                           PASS
+     test_should_destroy_project                                          PASS
+     test_should_get_edit                                                 PASS
+     test_should_get_index                                                PASS
+     test_should_get_new                                                  PASS
+     test_should_show_project                                             PASS
+     test_should_update_project                                           PASS
+StatesControllerTest
+     test_should_create_state                                             PASS
+     test_should_destroy_state                                            PASS
+     test_should_get_edit                                                 PASS
+     test_should_get_index                                                PASS
+     test_should_get_new                                                  PASS
+     test_should_get_page_related_states                                 ERROR
+        No route matches {:id=>"1", :controller=>"states", :action=>"get_by_page"}
+        STDERR:
+        Exception `ActionController::RoutingError' at C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:464:in `raise_routing_error'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:460:in `rescue in generate'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:452:in `generate'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:493:in `generate'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:489:in `generate_extras'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:485:in `extra_keys'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:145:in `assign_parameters'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:438:in `process'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:49:in `process'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:365:in `get'
+        test/functional/states_controller_test.rb:9:in `block in <class:StatesControllerTest>'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/testing/setup_and_teardown.rb:35:in `block in run'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:444:in `_run_setup_callbacks'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:81:in `run_callbacks'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/testing/setup_and_teardown.rb:34:in `run'
+     test_should_show_state                                               PASS
+     test_should_update_state                                             PASS
+Test::Unit::TestCase
+UsersControllerTest
+     test_get_related_comments                                           ERROR
+        No route matches {:id=>"1", :controller=>"users", :action=>"get_related_comments"}
+        STDERR:
+        Exception `ActionController::RoutingError' at C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:464:in `raise_routing_error'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:460:in `rescue in generate'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:452:in `generate'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:493:in `generate'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:489:in `generate_extras'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:485:in `extra_keys'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:145:in `assign_parameters'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:438:in `process'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:49:in `process'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:365:in `get'
+        test/functional/users_controller_test.rb:10:in `block in <class:UsersControllerTest>'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/testing/setup_and_teardown.rb:35:in `block in run'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:444:in `_run_setup_callbacks'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:81:in `run_callbacks'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/testing/setup_and_teardown.rb:34:in `run'
+     test_get_related_states                                             ERROR
+        No route matches {:id=>"1", :controller=>"users", :action=>"get_related_states"}
+        STDERR:
+        Exception `ActionController::RoutingError' at C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:464:in `raise_routing_error'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:460:in `rescue in generate'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:452:in `generate'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:493:in `generate'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:489:in `generate_extras'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:485:in `extra_keys'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:145:in `assign_parameters'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:438:in `process'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:49:in `process'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_controller/test_case.rb:365:in `get'
+        test/functional/users_controller_test.rb:17:in `block in <class:UsersControllerTest>'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/testing/setup_and_teardown.rb:35:in `block in run'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:444:in `_run_setup_callbacks'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:81:in `run_callbacks'
+        C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/activesupport-3.1.0/lib/active_support/testing/setup_and_teardown.rb:34:in `run'
+     test_should_create_user                                              PASS
+     test_should_destroy_user                                             PASS
+     test_should_get_edit                                                 PASS
+     test_should_get_index                                                PASS
+     test_should_get_new                                                  PASS
+     test_should_show_user                                                PASS
+     test_should_update_user                                              PASS
+==============================================================================
+  pass: 36,  fail: 0,  error: 8
+  total: 44 tests with 51 assertions in 1.22307 seconds
+==============================================================================
