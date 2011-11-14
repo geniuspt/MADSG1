@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
 def get_related_comments
   
-    @comments = Comment.where("page_id = ?",params[:id])
+    @comments = Comment.where("page_id = ?",params[:id]).select("comments.*, users.name AS name").joins(:user)
 	@page_id = params[:id]
 	#@page = Page.find(params[:id])
     respond_to do |format|

@@ -28,12 +28,14 @@ class CommentsController < ApplicationController
 	@user_name = request.remote_ip
 	@page_id = params[:id]
 	
-	@user = User.where("name LIKE ?",@user_name).first
+	@user = User.where("name LIKE ?",@user_name)
 	
 	if @user.empty?
 		@user = User.new(:name => @user_name)
 		@user.save
-	end	
+	else
+		@user = 	@user.first
+	end
 	@comment.page_id = @page_id
 	@comment.user_id = @user.id
 	
