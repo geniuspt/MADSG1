@@ -4,6 +4,7 @@ class PagesController < ApplicationController
 def get_related_comments
   
     @comments = Comment.where("page_id = ?",params[:id])
+	@page_id = params[:id]
 	#@page = Page.find(params[:id])
     respond_to do |format|
       format.html # get_related_comments.html.erb

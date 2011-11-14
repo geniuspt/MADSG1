@@ -25,11 +25,23 @@ class CommentsController < ApplicationController
   # GET /comments/new.json
   def new
     @comment = Comment.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @comment }
-    end
+	@user_name = request.remote_ip
+	@page_id = params[:id]
+	
+	@user = User.where("name LIKE ?",@user_name).first
+	
+	if @user.empty?
+		@user = User.new(:name => @user_name)
+		@user.save
+	end	
+	@comment.page_id = @page_id
+	@comment.user_id = @user.id
+	
+	respond_to do |format|
+	  format.html # new.html.erb
+	  format.json { render json: @comment }
+	end
+	
   end
 
   # GET /comments/1/edit
