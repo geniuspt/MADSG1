@@ -12,7 +12,7 @@
 
 <p>
   <b>Body:</b>
-  <%= @state.body %>
+  <%= RedCloth.new(@state.body).to_html %>
 </p>
 
 
