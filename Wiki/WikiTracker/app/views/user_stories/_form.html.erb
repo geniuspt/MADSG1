@@ -1,0 +1,69 @@
+<%= form_for(@user_story) do |f| %>
+  <% if @user_story.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user_story.errors.count, "error") %> prohibited this user_story from being saved:</h2>
+
+      <ul>
+      <% @user_story.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :token %><br />
+    <%= f.text_field :token %>
+  </div>
+  <div class="field">
+    <%= f.label :id_pivotal %><br />
+    <%= f.number_field :id_pivotal %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :api_url %><br />
+    <%= f.text_field :api_url %>
+  </div>
+  <div class="field">
+    <%= f.label :story_type %><br />
+    <%= f.text_field :story_type %>
+  </div>
+  <div class="field">
+    <%= f.label :current_state %><br />
+    <%= f.text_field :current_state %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :requested_by %><br />
+    <%= f.text_field :requested_by %>
+  </div>
+  <div class="field">
+    <%= f.label :created_at %><br />
+    <%= f.text_field :created_at %>
+  </div>
+  <div class="field">
+    <%= f.label :labels %><br />
+    <%= f.text_field :labels %>
+  </div>
+  <div class="field">
+    <%= f.label :owned_by %><br />
+    <%= f.text_field :owned_by %>
+  </div>
+  <div class="field">
+    <%= f.label :accepted_at %><br />
+    <%= f.text_field :accepted_at %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

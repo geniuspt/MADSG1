@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111108094808) do
+ActiveRecord::Schema.define(:version => 20111114155511) do
 
   create_table "comments", :force => true do |t|
     t.integer  "page_id"
@@ -40,6 +40,24 @@ ActiveRecord::Schema.define(:version => 20111108094808) do
     t.integer  "user_id"
     t.integer  "page_id"
     t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_stories", :force => true do |t|
+    t.string   "token"
+    t.integer  "id_pivotal"
+    t.string   "url"
+    t.string   "api_url"
+    t.string   "story_type"
+    t.string   "current_state"
+    t.text     "description"
+    t.string   "name"
+    t.string   "requested_by"
+    t.string   "created_at_pivotal"
+    t.string   "labels"
+    t.string   "owned_by"
+    t.string   "accepted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
