@@ -1,4 +1,6 @@
 WikiTracker::Application.routes.draw do
+  resources :user_stories
+
   get "home/index"
 
   resources :comments do
