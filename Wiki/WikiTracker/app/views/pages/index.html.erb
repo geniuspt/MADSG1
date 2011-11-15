@@ -1,9 +1,6 @@
-<h1>Listing pages</h1>
-
 <table>
   <tr>
-    <th>Name</th>
-    <th>Project</th>
+    <th>Índice de Páginas</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,8 +8,7 @@
 
 <% @pages.each do |page| %>
   <tr>
-    <td><%= page.name %></td>
-    <td><%= page.project %></td>
+    <td class="first_bigger"><%= page.name %></td>
     <td><%= link_to 'Show', page %></td>
     <td><%= link_to 'Edit', edit_page_path(page) %></td>
     <td><%= link_to 'Destroy', page, confirm: 'Are you sure?', method: :delete %></td>

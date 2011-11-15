@@ -1,17 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-
+<table>
+  <tr>
+    <th>Índice de Páginas</th>
+    <th></th>
+  </tr>
+  
 <% @pages.each do |page| %>
-
-<p>
-  <b>Name:</b>
-  <%= page.name %>
-  <%= link_to 'Show', :controller => "pages", :action => "show", :id => page.id %>
-</p>
-
-
+  <tr>
+    <td class="first_bigger"><%= page.name %></td>
+    <td>  <%= link_to 'Show', :controller => "pages", :action => "show", :id => page.id %></td>
+  </tr>
 <% end %>
-
-<%= link_to 'New Page', :controller => "pages", :action => "new", :id => @project_id %>
-
+</table>
+<br/>
+<%= link_to 'New Page', :controller => "pages", :action => "new", :id => @page_id %>
 <%= link_to 'Back', pages_path %>
