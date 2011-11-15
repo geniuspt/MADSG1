@@ -29,7 +29,20 @@ class StatesController < ApplicationController
   # GET /states/new.json
   def new
     @state = State.new
-
+	@user_name = request.remote_ip
+	@page_id = params[:id]
+	
+	@user = User.where("name LIKE ?",@user_name)
+	
+	if @user.empty?
+		@user = User.new(:name => @user_name)
+		@user.save
+	else
+		@user = 	@user.first
+	end
+	@state.page_id = @page_id
+	@state.user_id = @user.id
+	
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @state }

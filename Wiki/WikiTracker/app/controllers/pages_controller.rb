@@ -12,14 +12,17 @@ def get_related_comments
     end
   end
   
-  def get_last_state
+  def get_last_state(id)
+    State.select("body").where("page_id = ?",id).order("updated_at DESC").first
+  end
   
-    @page = State.select("body").where("page_id = ?",params[:id]).order("updated_at DESC").first
-	#@page = Page.find(params[:id])
-    respond_to do |format|
-      format.html # get_last_state.html.erb
-      format.json { render json: @pages }
-    end
+  def get_related_states
+	@states = State.where("page_id = ?",params[:id])
+	@page_id = params[:id]
+	respond_to do |format|
+      format.html # get_related_states.html.erb
+      format.json { render json: @states }
+	end
   end
 
   # GET /pages
@@ -37,7 +40,7 @@ def get_related_comments
   # GET /pages/1.json
   def show
     @page = Page.find(params[:id])
-
+	@state= get_last_state(params[:id])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @page }
@@ -92,14 +95,7 @@ def get_related_comments
     end
   end
   
-  def get_related_states
-	@states = State.where("page_id = ?",params[:id])
 
-	respond_to do |format|
-      format.html # get_related_states.html.erb
-      format.json { render json: @states }
-	end
-  end
 
   # DELETE /pages/1
   # DELETE /pages/1.json
