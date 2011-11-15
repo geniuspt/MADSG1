@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+
+<% @pages.each do |page| %>
+
+<p>
+  <b>Name:</b>
+  <%= page.name %>
+  <%= link_to 'Show', :controller => "pages", :action => "show", :id => page.id %>
+</p>
+
+
+<% end %>
+
+<%= link_to 'New Page', :controller => "pages", :action => "new", :id => @project_id %>
+
+<%= link_to 'Back', pages_path %>

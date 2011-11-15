@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @page.name %>
+</p>
+
+<p>
+  <b>Project:</b>
+  <%= @page.project %>
+</p>
+
+<p>
+  <b>Body</b>
+  <%= @state.body %>
+</p>
+
+<p>
+  <b>Updated at:</b>
+  <%= @state.updated_at %>
+</p>
+
+<%= link_to 'Show comments', :controller => "pages", :action => "get_related_comments", :id => @page.id %> |
+<%= link_to 'Show states', :controller => "pages", :action => "get_related_states", :id => @page.id %> |
+<%= link_to 'Edit', edit_page_path(@page) %> |
+<%= link_to 'Back', pages_path %>

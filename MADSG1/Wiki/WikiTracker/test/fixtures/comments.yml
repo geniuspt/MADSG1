@@ -1,0 +1,6 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  page_id: 1
+  user_id: 1
+  body: Isto e tao fixe

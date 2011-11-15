@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: Estado da nacao
+  project_id: 1
+
+two:
+  name: Problemas com o jp
+  project_id: 1
