@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+﻿<p id="notice"><%= notice %></p>
 
 <p>
   <b>Name:</b>
@@ -10,6 +10,11 @@
   <%= @page.project %>
 </p>
 
+<% if @state.nil? %>
+<p>
+  <b>Esta página ainda não foi criada. Seja o primeiro a criá-la!</b>
+</p>
+<% else %>
 <p>
   <b>Body</b>
   <%= @state.body %>
@@ -19,8 +24,10 @@
   <b>Updated at:</b>
   <%= @state.updated_at %>
 </p>
+<% end %>
+
 
 <%= link_to 'Show comments', :controller => "pages", :action => "get_related_comments", :id => @page.id %> |
 <%= link_to 'Show states', :controller => "pages", :action => "get_related_states", :id => @page.id %> |
-<%= link_to 'Edit', edit_page_path(@page) %> |
+<%= link_to 'Edit', :controller => "states", :action => "new", :id => @page.id  %>|
 <%= link_to 'Back', pages_path %>
