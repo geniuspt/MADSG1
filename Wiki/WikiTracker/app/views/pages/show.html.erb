@@ -1,24 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @page.name %>
-</p>
 
-<p>
-  <b>Project:</b>
-  <%= @page.project %>
-</p>
 
-<p>
-  <b>Body</b>
-  <%= @state.body %>
-</p>
+<%= raw(RedCloth.new(@state.body).to_html) %>
 
-<p>
-  <b>Updated at:</b>
-  <%= @state.updated_at %>
-</p>
+<br/>
+<p class="meta"><span class="date"><%= @state.page.name %></span><span class="posted">Last edited by <%= @state.user.name %> at <%= @state.updated_at %></span></p>	
+<br/>
+
+
 
 <%= link_to 'Show comments', :controller => "pages", :action => "get_related_comments", :id => @page.id %> |
 <%= link_to 'Show states', :controller => "pages", :action => "get_related_states", :id => @page.id %> |

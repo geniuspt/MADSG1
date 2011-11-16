@@ -1,20 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>User:</b>
-  <%= @state.user %>
-</p>
+<%= raw(RedCloth.new(@state.body).to_html) %>
 
-<p>
-  <b>Page:</b>
-  <%= @state.page %>
-</p>
-
-<p>
-  <b>Body:</b>
-  <%= RedCloth.new(@state.body).to_html %>
-</p>
-
+<br/>
+<p class="meta"><span class="date"><%= @state.page %></span><span class="posted">Last edited by <a href="#"><%= @state.user %></a> at November 7, 2011</span></p>	
+<br/>
 
 <%= link_to 'Edit', edit_state_path(@state) %> |
 <%= link_to 'Back', states_path %>

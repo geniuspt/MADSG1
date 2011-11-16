@@ -13,7 +13,7 @@ def get_related_comments
   end
   
   def get_last_state(id)
-    State.select("body").where("page_id = ?",id).order("updated_at DESC").first
+    State.where("page_id = ?",id).order("updated_at DESC").first
   end
   
   def get_related_states
