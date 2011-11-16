@@ -10,7 +10,9 @@ class StatesController < ApplicationController
     end
   end
   
-
+  def get_last_state(id)
+    State.select("body").where("page_id = ?",id).order("updated_at DESC").first
+  end
   
   
 
@@ -42,6 +44,9 @@ class StatesController < ApplicationController
 	end
 	@state.page_id = @page_id
 	@state.user_id = @user.id
+	
+	@state_temp = get_last_state(@page_id)
+	@state.body = @state_temp.body
 	
     respond_to do |format|
       format.html # new.html.erb

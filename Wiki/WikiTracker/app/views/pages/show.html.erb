@@ -1,16 +1,19 @@
-<p id="notice"><%= notice %></p>
+﻿<p id="notice"><%= notice %></p>
 
 
-
+<% if @state.nil? %>
+<p>
+  <b>Esta página ainda não foi criada. Seja o primeiro a criá-la!</b>
+</p>
+<% else %>
 <%= raw(RedCloth.new(@state.body).to_html) %>
 
 <br/>
 <p class="meta"><span class="date"><%= @state.page.name %></span><span class="posted">Last edited by <%= @state.user.name %> at <%= @state.updated_at %></span></p>	
 <br/>
-
-
+<% end %>
 
 <%= link_to 'Show comments', :controller => "pages", :action => "get_related_comments", :id => @page.id %> |
 <%= link_to 'Show states', :controller => "pages", :action => "get_related_states", :id => @page.id %> |
-<%= link_to 'Edit', edit_page_path(@page) %> |
+<%= link_to 'Edit', :controller => "states", :action => "new", :id => @page.id  %>|
 <%= link_to 'Back', pages_path %>
