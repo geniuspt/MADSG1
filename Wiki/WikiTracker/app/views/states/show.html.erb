@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= raw(RedCloth.new(@state.body).to_html) %>
+<%= raw(RedClothCustom.new(@state.body)) %>
 
 <br/>
 <p class="meta"><span class="date"><%= @state.page %></span><span class="posted">Last edited by <a href="#"><%= @state.user %></a> at November 7, 2011</span></p>	
