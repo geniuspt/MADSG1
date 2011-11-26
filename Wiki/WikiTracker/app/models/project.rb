@@ -1,7 +1,5 @@
- require 'open-uri'
- require 'openssl'
 class Project < ActiveRecord::Base
-	OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
+
 	validates_presence_of :name
 	has_many :page
 	
@@ -17,6 +15,7 @@ class Project < ActiveRecord::Base
 			:accepted_at => story.accepted_at, :labels => story.labels, :project_id => 376079)
             #:updated_at => story.updated_at
         end
+	
 	
 	end
 

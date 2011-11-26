@@ -1,4 +1,4 @@
-class UserStoriesController < ApplicationController
+class UserStoriesController < ApplicationController 
   # GET /user_stories
   # GET /user_stories.json
   def index
@@ -10,13 +10,14 @@ class UserStoriesController < ApplicationController
     end
   end
 
+  
   # GET /user_stories/1
   # GET /user_stories/1.json
   def show
     @user_story = UserStory.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
+	respond_to do |format|
+      format.html # index.html.erb
       format.json { render json: @user_story }
     end
   end
@@ -25,7 +26,7 @@ class UserStoriesController < ApplicationController
   # GET /user_stories/new.json
   def new
     @user_story = UserStory.new
-
+	
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @user_story }
@@ -40,8 +41,10 @@ class UserStoriesController < ApplicationController
   # POST /user_stories
   # POST /user_stories.json
   def create
-    @user_story = UserStory.new(params[:user_story])
 
+    @user_story = UserStory.new(params[:user_story])
+	 
+	 UserStory.addStory(@user_story)
     respond_to do |format|
       if @user_story.save
         format.html { redirect_to @user_story, notice: 'User story was successfully created.' }
@@ -49,8 +52,9 @@ class UserStoriesController < ApplicationController
       else
         format.html { render action: "new" }
         format.json { render json: @user_story.errors, status: :unprocessable_entity }
-      end
+	  end
     end
+
   end
 
   # PUT /user_stories/1
