@@ -43,9 +43,9 @@ class UserStoriesController < ApplicationController
   def create
 
     @user_story = UserStory.new(params[:user_story])
-	 
-	 UserStory.addStory(@user_story)
-    respond_to do |format|
+	render json: UserStory.addStory(@user_story)
+
+=begin    respond_to do |format|
       if @user_story.save
         format.html { redirect_to @user_story, notice: 'User story was successfully created.' }
         format.json { render json: @user_story, status: :created, location: @user_story }
@@ -53,7 +53,7 @@ class UserStoriesController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @user_story.errors, status: :unprocessable_entity }
 	  end
-    end
+=end    end
 
   end
 
