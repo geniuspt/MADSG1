@@ -1,9 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
-  <%= @user_story.name %>
+  <b>Token:</b>
+  <%= @user_story.token %>
 </p>
+
+<p>
+  <b>Id pivotal:</b>
+  <%= @user_story.id_pivotal %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @user_story.url %>
+</p>
+
+<p>
+  <b>Api url:</b>
+  <%= @user_story.api_url %>
+</p>
+
 <p>
   <b>Story type:</b>
   <%= @user_story.story_type %>
@@ -15,18 +31,18 @@
 </p>
 
 <p>
-  <b>Owned by:</b>
-  <%= @user_story.owned_by %>
+  <b>Description:</b>
+  <%= @user_story.description %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @user_story.name %>
 </p>
 
 <p>
   <b>Requested by:</b>
   <%= @user_story.requested_by %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @user_story.description %>
 </p>
 
 <p>
@@ -37,6 +53,11 @@
 <p>
   <b>Labels:</b>
   <%= @user_story.labels %>
+</p>
+
+<p>
+  <b>Owned by:</b>
+  <%= @user_story.owned_by %>
 </p>
 
 <p>

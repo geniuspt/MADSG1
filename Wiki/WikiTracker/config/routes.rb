@@ -1,4 +1,6 @@
 WikiTracker::Application.routes.draw do
+  resources :memberships
+
   resources :comment_stories
 
   resources :user_stories

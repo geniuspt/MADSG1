@@ -44,7 +44,7 @@ class UserStoriesController < ApplicationController
 
     @user_story = UserStory.new(params[:user_story])
     UserStory.addStory(@user_story)
-	render json: @user_story
+
 =begin   respond_to do |format|
       if @user_story.save
         format.html { redirect_to @user_story, notice: 'User story was successfully created.' }

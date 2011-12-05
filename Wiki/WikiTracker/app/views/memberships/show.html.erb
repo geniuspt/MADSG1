@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @membership.name %>
+</p>
+
+<p>
+  <b>Id pivotal:</b>
+  <%= @membership.id_pivotal %>
+</p>
+
+<p>
+  <b>Role:</b>
+  <%= @membership.role %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @membership.email %>
+</p>
+
+<p>
+  <b>Initials:</b>
+  <%= @membership.initials %>
+</p>
+
+
+<%= link_to 'Edit', edit_membership_path(@membership) %> |
+<%= link_to 'Back', memberships_path %>

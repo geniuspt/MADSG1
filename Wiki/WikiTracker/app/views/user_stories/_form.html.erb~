@@ -41,7 +41,7 @@
     <%= f.label :requested_by %><br />
     <select name ="user_story[requested_by]">
 	<%= @memberships.each do |member| %>
-	<option value="<%= member.name %>"><%= member.name %></option>
+	<option value="<%= member.id_pivotal %>"><%= member.name %></option>
 	<% end %>
     </select> 
   </div>
@@ -50,7 +50,7 @@
     <%= f.label :owned_by %><br />
      <select name ="user_story[owned_by]">
 	<%= @memberships.each do |member| %>
-	<option value="<%= member.name %>"><%= member.name %></option>
+	<option value="<%= member.id_pivotal %>"><%= member.name %></option>
 	<% end %>
     </select> 
   </div>
