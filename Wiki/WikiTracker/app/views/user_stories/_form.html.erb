@@ -12,58 +12,50 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :token %><br />
-    <%= f.text_field :token %>
-  </div>
-  <div class="field">
-    <%= f.label :id_pivotal %><br />
-    <%= f.number_field :id_pivotal %>
-  </div>
-  <div class="field">
-    <%= f.label :url %><br />
-    <%= f.text_field :url %>
-  </div>
-  <div class="field">
-    <%= f.label :api_url %><br />
-    <%= f.text_field :api_url %>
-  </div>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>	
   <div class="field">
     <%= f.label :story_type %><br />
-    <%= f.text_field :story_type %>
+    <select name ="user_story[story_type]">
+	<option value="feature">Feature</option>
+	<option value="bug">Bug</option>
+        <option value="chore">Chore</option>
+	<option value="release">Release</option>
+    </select> 
   </div>
   <div class="field">
     <%= f.label :current_state %><br />
-    <%= f.text_field :current_state %>
+    <select name ="user_story[current_state]">
+	<option value="started">started</option>
+	<option value="finished">finished</option>
+        <option value="unscheduled">unscheduled</option>
+    </select> 
   </div>
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </div>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
+  
   <div class="field">
     <%= f.label :requested_by %><br />
-    <%= f.text_field :requested_by %>
+    <select name ="user_story[requested_by]">
+	<%= @memberships.each do |member| %>
+	<option value="<%= member.name %>"><%= member.name %></option>
+	<% end %>
+    </select> 
   </div>
-  <div class="field">
-    <%= f.label :created_at %><br />
-    <%= f.text_field :created_at %>
-  </div>
-  <div class="field">
-    <%= f.label :labels %><br />
-    <%= f.text_field :labels %>
-  </div>
+
   <div class="field">
     <%= f.label :owned_by %><br />
-    <%= f.text_field :owned_by %>
+     <select name ="user_story[owned_by]">
+	<%= @memberships.each do |member| %>
+	<option value="<%= member.name %>"><%= member.name %></option>
+	<% end %>
+    </select> 
   </div>
-  <div class="field">
-    <%= f.label :accepted_at %><br />
-    <%= f.text_field :accepted_at %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+
+   <div class="action">
+    <%= f.submit %><br />
   </div>
 <% end %>

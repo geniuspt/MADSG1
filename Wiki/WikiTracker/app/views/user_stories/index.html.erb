@@ -2,19 +2,9 @@
 
 <table>
   <tr>
-    <th>Token</th>
-    <th>Id pivotal</th>
-    <th>Url</th>
-    <th>Api url</th>
     <th>Story type</th>
     <th>Current state</th>
-    <th>Description</th>
     <th>Name</th>
-    <th>Requested by</th>
-    <th>Created at</th>
-    <th>Labels</th>
-    <th>Owned by</th>
-    <th>Accepted at</th>
     <th></th>
     <th></th>
     <th></th>
@@ -22,19 +12,9 @@
 
 <% @user_stories.each do |user_story| %>
   <tr>
-    <td><%= user_story.token %></td>
-    <td><%= user_story.id_pivotal %></td>
-    <td><%= user_story.url %></td>
-    <td><%= user_story.api_url %></td>
     <td><%= user_story.story_type %></td>
     <td><%= user_story.current_state %></td>
-    <td><%= user_story.description %></td>
     <td><%= user_story.name %></td>
-    <td><%= user_story.requested_by %></td>
-    <td><%= user_story.created_at %></td>
-    <td><%= user_story.labels %></td>
-    <td><%= user_story.owned_by %></td>
-    <td><%= user_story.accepted_at %></td>
     <td><%= link_to 'Show', user_story %></td>
     <td><%= link_to 'Edit', edit_user_story_path(user_story) %></td>
     <td><%= link_to 'Destroy', user_story, confirm: 'Are you sure?', method: :delete %></td>

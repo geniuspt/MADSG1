@@ -1,0 +1,61 @@
+<%= form_for(@user_story) do |f| %>
+  <% if @user_story.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user_story.errors.count, "error") %> prohibited this user_story from being saved:</h2>
+
+      <ul>
+      <% @user_story.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>	
+  <div class="field">
+    <%= f.label :story_type %><br />
+    <select name ="user_story[story_type]">
+	<option value="feature">Feature</option>
+	<option value="bug">Bug</option>
+        <option value="chore">Chore</option>
+	<option value="release">Release</option>
+    </select> 
+  </div>
+  <div class="field">
+    <%= f.label :current_state %><br />
+    <select name ="user_story[current_state]">
+	<option value="started">started</option>
+	<option value="finished">finished</option>
+        <option value="unscheduled">unscheduled</option>
+    </select> 
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :requested_by %><br />
+    <select name ="user_story[requested_by]">
+	<%= @memberships.each do |member| %>
+	<option value="<%= member.id_pivotal %>"><%= member.name %></option>
+	<% end %>
+    </select> 
+  </div>
+
+  <div class="field">
+    <%= f.label :owned_by %><br />
+     <select name ="user_story[owned_by]">
+	<%= @memberships.each do |member| %>
+	<option value="<%= member.id_pivotal %>"><%= member.name %></option>
+	<% end %>
+    </select> 
+  </div>
+
+   <div class="action">
+    <%= f.submit %><br />
+  </div>
+<% end %>

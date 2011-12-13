@@ -14,22 +14,29 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   def index
     @projects = Project.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @projects }
     end
   end
 
+=begin  
+  def sync
+    @projects = Project.all
+    Project.getAllStoriesFromPivotal(376079)
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @projects }
+    end
+  end
+=end
+
   # GET /projects/1
   # GET /projects/1.json
   def show
     @project = Project.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @project }
-    end
+    render json: Project.getAllStoriesFromPivotal(416129)
+    
   end
 
   # GET /projects/new

@@ -11,23 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111121223157) do
-
-  create_table "comment_stories", :force => true do |t|
-    t.integer  "comment_id"
-    t.string   "text"
-    t.date     "noted_at"
-    t.integer  "project_id"
-    t.integer  "story_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "autor"
-  end
+ActiveRecord::Schema.define(:version => 20111202123038) do
 
   create_table "comments", :force => true do |t|
     t.integer  "page_id"
     t.integer  "user_id"
     t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "memberships", :force => true do |t|
+    t.string   "name"
+    t.integer  "id_pivotal"
+    t.string   "role"
+    t.string   "email"
+    t.string   "initials"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -45,10 +44,6 @@ ActiveRecord::Schema.define(:version => 20111121223157) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "project_id"
-    t.integer  "iteration_length"
-    t.string   "week_start_day"
-    t.string   "point_scale"
   end
 
   create_table "states", :force => true do |t|
