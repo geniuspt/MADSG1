@@ -1,9 +1,9 @@
 class ProjectsController < ApplicationController
 
-	def get_related_pages
+  def get_related_pages
     @pages = Page.where("project_id=?",params[:id])
-	@project_id = params[:id]
-
+    @project_id = params[:id]
+    Project.getAllStoriesFromPivotal(416129)
     respond_to do |format|
       format.html  # get_related_pages.html.erb
       format.json { render json: @projects }
