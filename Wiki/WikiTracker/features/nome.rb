@@ -3,14 +3,7 @@ Feature: Addition
   As a math idiot 
   I want to be told the sum of two numbers
 
-  Scenario Outline: Add two numbers
-    Given I have entered <input_1> into the calculator
-    And I have entered <input_2> into the calculator
-    When I press <button>
-    Then the result should be <output> on the screen
-
-  Examples:
-    | input_1 | input_2 | button | output |
-    | 20      | 30      | add    | 50     |
-    | 2       | 5       | add    | 7      |
-    | 0       | 40      | add    | 40     |
+  Scenario Outline: Retrieve related pages correctly
+    Given I have entered id 1 into the function get_related_pages
+	When i press enter
+	Then the page.user_id result should be 1

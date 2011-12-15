@@ -1,4 +1,4 @@
-#require "#{Rails.root}/lib/redclothcustom.rb"
+require "#{Rails.root}/lib/redclothcustom.rb"
 
 class ApplicationController < ActionController::Base
   protect_from_forgery
