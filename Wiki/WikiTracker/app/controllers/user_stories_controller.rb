@@ -36,6 +36,7 @@ class UserStoriesController < ApplicationController
   # GET /user_stories/1/edit
   def edit
     @user_story = UserStory.find(params[:id])
+    @memberships = Membership.all
   end
 
   # POST /user_stories
@@ -43,20 +44,20 @@ class UserStoriesController < ApplicationController
   def create
 
     @user_story = UserStory.new(params[:user_story])
-    UserStory.addStory(@user_story)
-	render json: @user_story
-=begin   respond_to do |format|
+    aux = UserStory.addStory(@user_story)
+    @user_story.id_pivotal = aux	
+    		
+    respond_to do |format|
       if @user_story.save
-        format.html { redirect_to @user_story, notice: 'User story was successfully created.' }
-        format.json { render json: @user_story, status: :created, location: @user_story }
+	format.html { redirect_to @user_story, notice: 'User story was successfully created.' }
+	format.json { render json: @user_story, status: :created, location: @user_story }
       else
 	@memberships = Membership.all
-        format.html { render action: "new" }
-        format.json { render json: @user_story.errors, status: :unprocessable_entity }
+	format.html { render action: "new" }
+	format.json { render json: @user_story.errors, status: :unprocessable_entity }
       end
+    end
 
-   end
-=end
   end
 
   # PUT /user_stories/1
@@ -64,8 +65,10 @@ class UserStoriesController < ApplicationController
   def update
     @user_story = UserStory.find(params[:id])
 
+
     respond_to do |format|
       if @user_story.update_attributes(params[:user_story])
+	#render json: params[:user_story] 
         format.html { redirect_to @user_story, notice: 'User story was successfully updated.' }
         format.json { head :ok }
       else
@@ -79,8 +82,11 @@ class UserStoriesController < ApplicationController
   # DELETE /user_stories/1.json
   def destroy
     @user_story = UserStory.find(params[:id])
+    @a_project = PivotalTracker::Project.find(416129) 
+    @qq =  @a_project.stories.find(@user_story.id_pivotal)
+    @qq.delete
     @user_story.destroy
-
+	
     respond_to do |format|
       format.html { redirect_to user_stories_url }
       format.json { head :ok }
