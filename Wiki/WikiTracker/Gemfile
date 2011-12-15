@@ -34,6 +34,5 @@ group :test do
 end
 
 gem 'RedCloth', :require => 'redcloth'
-gem 'cucumber-rails'
-gem 'cucumber'
+
 gem 'rspec-rails'
