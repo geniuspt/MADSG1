@@ -2,7 +2,7 @@ class UserStoriesController < ApplicationController
   # GET /user_stories
   # GET /user_stories.json
   def index
-    @user_stories = UserStory.all
+    @user_stories = UserStory.where("project_id = ?",params[:id])
 
     respond_to do |format|
       format.html # index.html.erb

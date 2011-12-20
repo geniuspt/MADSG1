@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111202123038) do
+ActiveRecord::Schema.define(:version => 20111220141138) do
 
   create_table "comments", :force => true do |t|
     t.integer  "page_id"
@@ -44,6 +44,10 @@ ActiveRecord::Schema.define(:version => 20111202123038) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "pivotal_user"
+    t.string   "pivotal_pass"
+    t.string   "pivotal_token"
+    t.integer  "pivotal_id"
   end
 
   create_table "states", :force => true do |t|
@@ -70,6 +74,7 @@ ActiveRecord::Schema.define(:version => 20111202123038) do
     t.string   "accepted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "project_id"
   end
 
   create_table "users", :force => true do |t|

@@ -6,6 +6,6 @@
 </p>
 
 <%= link_to 'Show Pages', :controller => "projects", :action => "get_related_pages", :id => @project.id %> |
-<%= link_to 'List User Stories', :controller => "user_stories", :action => "index", :id => @project.pivotal_id  %> |
+<%= link_to 'List User Stories', :controller => "user_stories", :action => "index", :id => @project.id  %> |
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

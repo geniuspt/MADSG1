@@ -2,8 +2,7 @@ class ProjectsController < ApplicationController
 
   def get_related_pages
     @pages = Page.where("project_id=?",params[:id])
-    @project_id = params[:id]
-    render json: Project.getAllStoriesFromPivotal(416129)
+    Project.getAllStoriesFromPivotal(params[:id])
     respond_to do |format|
       format.html  # get_related_pages.html.erb
       format.json { render json: @projects }
@@ -20,22 +19,11 @@ class ProjectsController < ApplicationController
     end
   end
 
-=begin  
-  def sync
-    @projects = Project.all
-    Project.getAllStoriesFromPivotal(376079)
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @projects }
-    end
-  end
-=end
-
   # GET /projects/1
   # GET /projects/1.json
   def show
     @project = Project.find(params[:id])
-    render json: Project.getAllStoriesFromPivotal(416129)
+    render json: Project.getAllStoriesFromPivotal(params[:id])
     
   end
 
@@ -59,7 +47,7 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(params[:project])
-
+    @project.pivotal_token = PivotalTracker::Client.token(@project.pivotal_user, @project.pivotal_pass)
     respond_to do |format|
       if @project.save
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
