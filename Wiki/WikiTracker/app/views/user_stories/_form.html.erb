@@ -10,11 +10,16 @@
       </ul>
     </div>
   <% end %>
-
+   	
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
-  </div>	
+  </div>
+
+    <%= f.hidden_field :project_id %>
+
+
+	
   <div class="field">
     <%= f.label :story_type %><br />
     <select name ="user_story[story_type]">

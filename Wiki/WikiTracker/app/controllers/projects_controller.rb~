@@ -23,7 +23,10 @@ class ProjectsController < ApplicationController
   # GET /projects/1.json
   def show
     @project = Project.find(params[:id])
-    render json: Project.getAllStoriesFromPivotal(params[:id])
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @projects }
+    end
     
   end
 

@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
 
   def get_related_pages
     @pages = Page.where("project_id=?",params[:id])
-    Project.getAllStoriesFromPivotal(params[:id])
+    
     respond_to do |format|
       format.html  # get_related_pages.html.erb
       format.json { render json: @projects }
@@ -23,6 +23,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1.json
   def show
     @project = Project.find(params[:id])
+    Project.getAllStoriesFromPivotal(params[:id])	
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @projects }
