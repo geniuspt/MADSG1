@@ -1,0 +1,20 @@
+<div id="content">
+	<div class="post">
+		<div style="clear: both;">&nbsp;</div>
+		<div class="entry">
+			<h2 class="title"><a href="#">About WikiTracker </a></h2>
+			<p><strong>WikiTracker </strong>was developed for the course Agile Software Development Methodologies from FEUP.</p>
+			<p>The development team includes: </p>
+			<ul>
+				<li><a href="mailto:ademar.aguiar@fe.up.pt">Ademar Aguiar</a></li>
+				<li><a href="mailto:ei07133@fe.up.pt">António Ferreira</a></li>
+				<li><a href="mailto:ei071XX@fe.up.pt">Francisco Silva</a></li>
+				<li><a href="mailto:ei07120@fe.up.pt">João Correia</a></li>
+				<li><a href="mailto:ei07110@fe.up.pt">João Soares</a></li>
+				<li><a href="mailto:ei071XX@fe.up.pt">Soraia Ferreira</a></li>
+				<li><a href="mailto:ei071XX@fe.up.pt">Tiago Loureiro</a></li>
+			</ul>
+		</div>
+
+	</div>
+</div>
