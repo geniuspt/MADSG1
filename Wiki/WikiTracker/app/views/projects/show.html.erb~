@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @project.name %>
+</p>
+
+<<<<<<< HEAD
+<%= button_to 'Show Pages', {:controller => "projects", :action => "get_related_pages", :id => @project.id}, , :class => 'clean-gray' %>
+<%= button_to_to 'Edit', edit_project_path(@project), :class => 'clean-gray' %>
+<%= button_to 'Back', projects_path, :class => 'clean-gray' %>
+
+
+
+=======
+<%= link_to 'Show Pages', :controller => "projects", :action => "get_related_pages", :id => @project.id %> |
+<%= link_to 'List User Stories', :controller => "user_stories", :action => "index", :id => @project.pivotal_id  %> |
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
+>>>>>>> ff8a4168501250653830a81cb4b55437a92d2dd5

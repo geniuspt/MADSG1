@@ -4,13 +4,14 @@ class Project < ActiveRecord::Base
 	has_many :page
 	
 	def self.getAllStoriesFromPivotal(id)
-		PivotalTracker::Client.token = 'ca4c001cb4e08ebe7e62dc6d32a96f44'                 
-		@a_project = PivotalTracker::Project.find(id) # find project with a given ID
+		@project = Project.find(id)
+ 		PivotalTracker::Client.token = @project.pivotal_token                
+		@a_project = PivotalTracker::Project.find(@project.pivotal_id) # find project with a given ID
 		
 		UserStory.delete_all
 		Membership.delete_all
 		@a_project.stories.all.each do |story|    	
-			UserStory.create(:id_pivotal => story.id, :story_type => story.story_type, 
+			UserStory.create(:project_id => @project.pivotal_id, :id_pivotal => story.id, :story_type => story.story_type, 
 					:current_state => story.current_state, 
 					:description => story.description, :requested_by => story.requested_by, 
 					:owned_by => story.owned_by, :name => story.name, :created_at => story.created_at, 
@@ -21,6 +22,5 @@ class Project < ActiveRecord::Base
 			Membership.create(:id_pivotal => member.id, :role => member.role, 
 					:name => member.name, :email => member.email, :initials => member.initials)
 		end
-			
-	end
+ 	end
 end

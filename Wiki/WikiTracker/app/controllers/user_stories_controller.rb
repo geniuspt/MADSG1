@@ -2,8 +2,8 @@ class UserStoriesController < ApplicationController
   # GET /user_stories
   # GET /user_stories.json
   def index
-    @user_stories = UserStory.all
-
+    @user_stories = UserStory.where("project_id = ?",params[:id])
+    @project = Project.find(:first, :conditions => [ "pivotal_id = ? ",params[:id]])	
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @user_stories }
@@ -26,7 +26,9 @@ class UserStoriesController < ApplicationController
   # GET /user_stories/new.json
   def new
     @user_story = UserStory.new
+    @user_story.project_id = params[:id]
     @memberships = Membership.all
+   	
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @user_story }
@@ -45,19 +47,21 @@ class UserStoriesController < ApplicationController
 
     @user_story = UserStory.new(params[:user_story])
     aux = UserStory.addStory(@user_story)
-    @user_story.id_pivotal = aux	
-    		
-    respond_to do |format|
-      if @user_story.save
-	format.html { redirect_to @user_story, notice: 'User story was successfully created.' }
-	format.json { render json: @user_story, status: :created, location: @user_story }
-      else
-	@memberships = Membership.all
-	format.html { render action: "new" }
-	format.json { render json: @user_story.errors, status: :unprocessable_entity }
-      end
-    end
-
+    if(aux.id == nil)	    
+	 render json: aux.errors
+    else
+	@user_story.id_pivotal = aux.id
+	respond_to do |format|
+		if @user_story.save
+		   format.html { redirect_to @user_story, notice: 'User story was successfully created.' }
+		   format.json { render json: @user_story, status: :created, location: @user_story }
+		else
+		   @memberships = Membership.all
+		   format.html { render action: "new" }
+		   format.json { render json: @user_story.errors, status: :unprocessable_entity }
+		end
+	end
+    end		
   end
 
   # PUT /user_stories/1
@@ -68,7 +72,7 @@ class UserStoriesController < ApplicationController
 
     respond_to do |format|
       if @user_story.update_attributes(params[:user_story])
-	#render json: params[:user_story] 
+	UserStory.editStory(@user_story)
         format.html { redirect_to @user_story, notice: 'User story was successfully updated.' }
         format.json { head :ok }
       else

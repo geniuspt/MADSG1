@@ -24,4 +24,4 @@
 
 <br />
 
-<%= link_to 'New User story', :controller => "user_stories", :action => "new", :id => @project.pivotal_id %>
+<%= link_to 'New User story', new_user_story_path(:id = @project.pivotal_id)%>
