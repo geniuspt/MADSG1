@@ -14,12 +14,9 @@
 <% end %>
 </table>
 <br/>
-<<<<<<< HEAD
+
 <%= button_to 'New Page', {:controller => "pages", :action => "new", :id => @project_id}, :class=> 'clean-gray'  %>
 <%= button_to 'Back', pages_path, :class=> 'clean-gray' %>
 
-=======
-<%= link_to 'New Page', :controller => "pages", :action => "new", :id => @project_id %>
-|
-<%= link_to 'Back', pages_path %>
->>>>>>> ff8a4168501250653830a81cb4b55437a92d2dd5
+<%= button_to 'Back', {:controller => "projects", :action => "new"}, :class=> 'clean-gray'  %>
+

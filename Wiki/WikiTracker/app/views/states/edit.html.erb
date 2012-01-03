@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @state %> |
-<%= link_to 'Back', states_path %>
+<%= button_to 'Show', @state, :class => 'clean-gray' %>
+<%= button_to 'Back',  {:controller => "pages", :action => "show", :id => @page_id}, :class => 'clean-gray' %>

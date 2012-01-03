@@ -4,7 +4,6 @@
   <tr>
     <th>User</th>
     <th>Page</th>
-    <th>Body</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,7 +13,6 @@
   <tr>
     <td><%= state.user %></td>
     <td><%= state.page %></td>
-    <td><%= state.body %></td>
     <td><%= link_to 'Show', state %></td>
     <td><%= link_to 'Edit', edit_state_path(state) %></td>
     <td><%= link_to 'Destroy', state, confirm: 'Are you sure?', method: :delete %></td>
@@ -24,4 +22,4 @@
 
 <br />
 
-<%= link_to 'New State', new_state_path %>
+<%= button_to 'New State', new_state_path, :class => 'clean-gray' %>

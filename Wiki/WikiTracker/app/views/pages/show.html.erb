@@ -13,7 +13,7 @@
 <br/>
 <% end %>
 
-<%= link_to 'Show comments', :controller => "pages", :action => "get_related_comments", :id => @page.id %> |
-<%= link_to 'Show states', :controller => "pages", :action => "get_related_states", :id => @page.id %> |
-<%= link_to 'Edit', :controller => "states", :action => "new", :id => @page.id  %>|
-<%= link_to 'Back', pages_path %>
+<%= button_to 'Show comments', {:controller => "pages", :action => "get_related_comments", :id => @page.id}, :class => 'clean-gray' %>
+<%= button_to 'Show states', {:controller => "pages", :action => "get_related_states", :id => @page.id}, :class => 'clean-gray' %>
+<%= button_to 'Edit', {:controller => "states", :action => "new", :id => @page.id}, :class => 'clean-gray'  %>
+<%= button_to 'Back',  {:controller => "projects", :action => "get_related_pages", :id => @page.project_id}, :class => 'clean-gray' %>
