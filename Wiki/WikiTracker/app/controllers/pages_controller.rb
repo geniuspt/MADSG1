@@ -1,6 +1,12 @@
 class PagesController < ApplicationController
 
-
+#Funtion that retreives all comments made to the given page
+#
+# * *Args*    :
+#   - +id+ -> page identification
+# * *Returns* :
+#   - comments associated to the given page
+#
 def get_related_comments
   
     @comments = Comment.where("page_id = ?",params[:id]).select("comments.*, users.name AS name").joins(:user)
@@ -11,11 +17,25 @@ def get_related_comments
       format.json { render json: @pages }
     end
   end
-  
+ 
+#Funtion to retrive the content of the current version of a page
+#
+# * *Args*    :
+#   - +id+ -> project identification
+# * *Returns* :
+#   - most recent state of a page
+# 
   def get_last_state(id)
     State.where("page_id = ?",id).order("updated_at DESC").first
   end
-  
+
+#Funtion to retrieve all states of a page
+#
+# * *Args*    :
+#   - +id+ -> project identification
+# * *Returns* :
+#   - states of a page
+#  
   def get_related_states
 	@states = State.where("page_id = ?",params[:id])
 	@page_id = params[:id]
@@ -25,6 +45,11 @@ def get_related_comments
 	end
   end
 
+#Funtion that returns all pages in the data base
+#
+# * *Returns* :
+#   - all pages
+#
   # GET /pages
   # GET /pages.json
   def index
@@ -36,6 +61,13 @@ def get_related_comments
     end
   end
 
+#Funtion that renders a visualization of a pages, showing its most recent content
+#
+# * *Args*    :
+#   - +id+ -> page identification
+# * *Returns* :
+#   - content of a page, title and most recent body
+#
   # GET /pages/1
   # GET /pages/1.json
   def show
@@ -47,6 +79,11 @@ def get_related_comments
     end
   end
 
+#Funtion to create a form for page creation
+#
+# * *Returns* :
+#   - renders a form to create a page
+#
   # GET /pages/new
   # GET /pages/new.json
   def new
@@ -58,11 +95,25 @@ def get_related_comments
     end
   end
 
+#Funtion to edit a page
+#
+# * *Args*    :
+#   - +id+ -> page identification
+# * *Returns* :
+#   - edited page
+#
   # GET /pages/1/edit
   def edit
     @page = Page.find(params[:id])
   end
 
+#Funtion to create a new page
+#
+# * *Returns* :
+#   - new page
+# * *Raises* :
+#   - +Error+ -> if action of creating page fails
+#
   # POST /pages
   # POST /pages.json
   def create
@@ -79,6 +130,15 @@ def get_related_comments
     end
   end
 
+#Funtion to update a page
+#
+# * *Args*    :
+#   - +id+ -> page identification
+# * *Returns* :
+#   - renders action to edit a page
+# * *Raises* :
+#   - +Error+ -> if action of editing page fails
+#
   # PUT /pages/1
   # PUT /pages/1.json
   def update
@@ -96,7 +156,11 @@ def get_related_comments
   end
   
 
-
+#Funtion to delete a page
+#
+# * *Args*    :
+#   - +id+ -> page identification
+#
   # DELETE /pages/1
   # DELETE /pages/1.json
   def destroy

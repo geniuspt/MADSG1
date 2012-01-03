@@ -1,4 +1,10 @@
 class StatesController < ApplicationController
+
+#Funtion that returns all states in the data base
+#
+# * *Returns* :
+#   - all states
+#
   # GET /states
   # GET /states.json
   def index
@@ -15,7 +21,13 @@ class StatesController < ApplicationController
   end
   
   
-
+#Funtion that renders a visualization of a state, showing its body, date of creation and author
+#
+# * *Args*    :
+#   - +id+ -> state identification
+# * *Returns* :
+#   - state, body, date of creation and author
+#
   # GET /states/1
   # GET /states/1.json
   def show
@@ -27,6 +39,11 @@ class StatesController < ApplicationController
     end
   end
 
+#Funtion to create a form for state creation
+#
+# * *Returns* :
+#   - renders a form to create a state
+#
   # GET /states/new
   # GET /states/new.json
   def new
@@ -56,11 +73,25 @@ class StatesController < ApplicationController
     end
   end
 
+#Funtion to edit a state
+#
+# * *Args*    :
+#   - +id+ -> state identification
+# * *Returns* :
+#   - edited state
+#
   # GET /states/1/edit
   def edit
     @state = State.find(params[:id])
   end
 
+#Funtion to create a new state
+#
+# * *Returns* :
+#   - new state
+# * *Raises* :
+#   - +Error+ -> if action of creating state fails
+#
   # POST /states
   # POST /states.json
   def create
@@ -79,6 +110,15 @@ class StatesController < ApplicationController
     end
   end
 
+#Funtion to update a state
+#
+# * *Args*    :
+#   - +id+ -> state identification
+# * *Returns* :
+#   - renders action to edit a state
+# * *Raises* :
+#   - +Error+ -> if action of editing state fails
+#
   # PUT /states/1
   # PUT /states/1.json
   def update
@@ -95,6 +135,11 @@ class StatesController < ApplicationController
     end
   end
 
+#Funtion to delete a state
+#
+# * *Args*    :
+#   - +id+ -> page identification
+#
   # DELETE /states/1
   # DELETE /states/1.json
   def destroy

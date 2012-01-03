@@ -1,5 +1,12 @@
 class UsersController < ApplicationController
-  
+
+#Funtion that retrieves all comments made by a user
+#
+# * *Args*    :
+#   - +id+ -> user identification
+# * *Returns* :
+#   - comments made the given user 
+#  
    def get_related_comments
     @comments = Comment.where("user_id=?",params[:id])
 
@@ -9,6 +16,13 @@ class UsersController < ApplicationController
     end
   end
   
+#Funtion that retrieves all page states made by a user
+#
+# * *Args*    :
+#   - +id+ -> user identification
+# * *Returns* :
+#   - states made by the given user
+#
   def get_related_states
     @states = State.where("user_id=?",params[:id])
 
@@ -18,6 +32,11 @@ class UsersController < ApplicationController
     end
   end
   
+#Funtion that returns all users in the data base
+#
+# * *Returns* :
+#   - all users
+#
   # GET /users
   # GET /users.json
   def index
@@ -29,6 +48,13 @@ class UsersController < ApplicationController
     end
   end
 
+#Funtion that renders a visualization of a user, showing its internet protocol (IP) address
+#
+# * *Args*    :
+#   - +id+ -> user identification
+# * *Returns* :
+#   - user
+#
   # GET /users/1
   # GET /users/1.json
   def show
@@ -40,6 +66,11 @@ class UsersController < ApplicationController
     end
   end
 
+#Funtion to create a form for user creation
+#
+# * *Returns* :
+#   - renders a form to create a user
+#
   # GET /users/new
   # GET /users/new.json
   def new
@@ -51,11 +82,25 @@ class UsersController < ApplicationController
     end
   end
 
+#Funtion to edit a user
+#
+# * *Args*    :
+#   - +id+ -> user identification
+# * *Returns* :
+#   - edited user
+#
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
   end
 
+#Funtion to create a new user
+#
+# * *Returns* :
+#   - new user
+# * *Raises* :
+#   - +Error+ -> if action of creating user fails
+#
   # POST /users
   # POST /users.json
   def create
@@ -72,6 +117,15 @@ class UsersController < ApplicationController
     end
   end
 
+#Funtion to update a user
+#
+# * *Args*    :
+#   - +id+ -> user identification
+# * *Returns* :
+#   - renders action to edit a user
+# * *Raises* :
+#   - +Error+ -> if action of editing user fails
+#
   # PUT /users/1
   # PUT /users/1.json
   def update
@@ -88,6 +142,11 @@ class UsersController < ApplicationController
     end
   end
 
+#Funtion to delete a user
+#
+# * *Args*    :
+#   - +id+ -> user identification
+#
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy

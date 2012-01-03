@@ -1,4 +1,10 @@
 class CommentsController < ApplicationController
+
+#Funtion that returns all comments in the data base
+#
+# * *Returns* :
+#   - all comments
+#
   # GET /comments
   # GET /comments.json
   def index
@@ -10,6 +16,13 @@ class CommentsController < ApplicationController
     end
   end
 
+#Funtion that renders a visualization of a comment, showing its body and author
+#
+# * *Args*    :
+#   - +id+ -> comment identification
+# * *Returns* :
+#   - comment, body and author
+#
   # GET /comments/1
   # GET /comments/1.json
   def show
@@ -21,6 +34,11 @@ class CommentsController < ApplicationController
     end
   end
 
+#Funtion to create a form for comment creation
+#
+# * *Returns* :
+#   - renders a form to create a comment
+#
   # GET /comments/new
   # GET /comments/new.json
   def new
@@ -46,11 +64,25 @@ class CommentsController < ApplicationController
 	
   end
 
+#Funtion to edit a comment
+#
+# * *Args*    :
+#   - +id+ -> comment identification
+# * *Returns* :
+#   - edited comment
+#
   # GET /comments/1/edit
   def edit
     @comment = Comment.find(params[:id])
   end
 
+#Funtion to create a new comment
+#
+# * *Returns* :
+#   - new comment
+# * *Raises* :
+#   - +Error+ -> if action of creating comment fails
+#
   # POST /comments
   # POST /comments.json
   def create
@@ -68,6 +100,15 @@ class CommentsController < ApplicationController
     end
   end
 
+#Funtion to update a comment
+#
+# * *Args*    :
+#   - +id+ -> comment identification
+# * *Returns* :
+#   - renders action to edit a comment
+# * *Raises* :
+#   - +Error+ -> if action of editing comment fails
+#
   # PUT /comments/1
   # PUT /comments/1.json
   def update
@@ -84,6 +125,11 @@ class CommentsController < ApplicationController
     end
   end
 
+#Funtion to delete a comment
+#
+# * *Args*    :
+#   - +id+ -> comment identification
+#
   # DELETE /comments/1
   # DELETE /comments/1.json
   def destroy
@@ -96,7 +142,13 @@ class CommentsController < ApplicationController
     end
   end
   
-
+#Funtion that retrieves all comments associated to a page
+#
+# * *Args*    :
+#   - +id+ -> page identification
+# * *Returns* :
+#   - comments of a page
+#
   def get_by_page
     @comments = Comment.where("page_id = ?",params[:id])
   

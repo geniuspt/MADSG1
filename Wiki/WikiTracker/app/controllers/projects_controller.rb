@@ -1,5 +1,12 @@
 class ProjectsController < ApplicationController
 
+#Funtion that returns the pages related to a project
+#
+# * *Args*    :
+#   - +id+ -> project identification
+# * *Returns* :
+#   - pages associated with the given project
+#
   def get_related_pages
     @pages = Page.where("project_id=?",params[:id])
     
@@ -9,6 +16,11 @@ class ProjectsController < ApplicationController
     end
   end
 
+#Funtion that returns all projects in the data base
+#
+# * *Returns* :
+#   - all projects
+#
   # GET /projects
   # GET /projects.json
   def index
@@ -19,6 +31,13 @@ class ProjectsController < ApplicationController
     end
   end
 
+#Funtion that renders a visualization of all pages associated with a project
+#
+# * *Args*    :
+#   - +id+ -> project identification
+# * *Returns* :
+#   - pages associated with the given project
+#
   # GET /projects/1
   # GET /projects/1.json
   def show
@@ -31,6 +50,11 @@ class ProjectsController < ApplicationController
     
   end
 
+#Funtion to create a form for project creation
+#
+# * *Returns* :
+#   - renders a form to create a project
+#
   # GET /projects/new
   # GET /projects/new.json
   def new
@@ -42,11 +66,25 @@ class ProjectsController < ApplicationController
     end
   end
 
+#Funtion to edit a project
+#
+# * *Args*    :
+#   - +id+ -> project identification
+# * *Returns* :
+#   - edited project
+#
   # GET /projects/1/edit
   def edit
     @project = Project.find(params[:id])
   end
 
+#Funtion to create a new project
+#
+# * *Returns* :
+#   - new project associated with a pivotal tracker account
+# * *Raises* :
+#   - +Error+ -> if action of creating project fails
+#
   # POST /projects
   # POST /projects.json
   def create
@@ -63,6 +101,15 @@ class ProjectsController < ApplicationController
     end
   end
 
+#Funtion to update a project
+#
+# * *Args*    :
+#   - +id+ -> project identification
+# * *Returns* :
+#   - renders action to edit a project
+# * *Raises* :
+#   - +Error+ -> if action of editing project fails
+#
   # PUT /projects/1
   # PUT /projects/1.json
   def update
@@ -79,6 +126,11 @@ class ProjectsController < ApplicationController
     end
   end
 
+#Funtion to delete a project
+#
+# * *Args*    :
+#   - +id+ -> project identification
+#
   # DELETE /projects/1
   # DELETE /projects/1.json
   def destroy
