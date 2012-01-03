@@ -1,15 +1,12 @@
-
-		<div id="content">
-			<div class="post">
-				<div style="clear: both;">&nbsp;</div>
-				<div class="entry">
-					<h2 class="title"><a href="#">Welcome to WikiTracker </a></h2>
-					<p>This is <strong>WikiTracker </strong>, a free Wiki.</p>
-					<p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum ipsum. Proin imperdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in felis. Donec ut ante. In id eros. Suspendisse lacus turpis, cursus egestas at sem.</p>
-					<p><%= link_to 'Projecto 1', :controller => "projects", :action => "get_related_pages", :id => 1 %></p>
-					<p><%= link_to 'User Stories', :controller => "user_stories", :action => "index" %></p>
-				</div>
-			<p class="meta"><span class="date"><a href="#">View Comments</a></span><span class="posted">Last edited by <a href="#">joaocorreia</a> at November 7, 2011</span></p>	
-			</div>
-			<div style="clear: both;">&nbsp;</div>
+<div id="content">
+	<div class="post">
+		<div style="clear: both;">&nbsp;</div>
+		<div class="entry">
+			<h2 class="title"><a href="#">Welcome to WikiTracker </a></h2>
+			<p>This is <strong>WikiTracker </strong>, a free Wiki.</p>
+			<p>WikiTracker is a simple wiki engine written in Rails 3.1. WikiTracker aims at simplifying the development process, namely the communication between the several parties involved. </p>
+	<%= button_to 'Create Project', {:controller => "projects", :action => "new"}, :class => 'clean-gray' %>
 		</div>
+
+	</div>
+</div>

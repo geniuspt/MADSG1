@@ -4,6 +4,9 @@ WikiTracker::Application.routes.draw do
   resources :comment_stories
 
   resources :user_stories
+  match 'comments/new' => 'comments#new'
+  
+  match 'about/' => 'about#index'
 
   get "home/index"
 
@@ -21,7 +24,7 @@ WikiTracker::Application.routes.draw do
 	get 'get_related_states'
    end
   end
-
+  match 'pages/new' => 'pages#new'
   resources :pages do
    collection do
     get 'get_last_state'
@@ -29,13 +32,17 @@ WikiTracker::Application.routes.draw do
 	get 'get_related_comments'
    end
   end
+  
 
+  match 'projects/new' => 'projects#new'
+  
   resources :projects do
    collection do
     get 'get_related_pages'
    end
   end
-  
+
+  match 'pages/:id' => 'pages#show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -55,10 +55,11 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = Comment.new(params[:comment])
-
+    
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+      	@page = Page.find(@comment.page_id)
+        format.html { redirect_to @page , notice: 'Comment was successfully updated.'}
         format.json { render json: @comment, status: :created, location: @comment }
       else
         format.html { render action: "new" }

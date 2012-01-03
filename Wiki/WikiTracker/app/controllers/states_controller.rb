@@ -46,7 +46,9 @@ class StatesController < ApplicationController
 	@state.user_id = @user.id
 	
 	@state_temp = get_last_state(@page_id)
-	@state.body = @state_temp.body
+	if not @state_temp.nil?
+		@state.body = @state_temp.body
+	end
 	
     respond_to do |format|
       format.html # new.html.erb
@@ -63,10 +65,12 @@ class StatesController < ApplicationController
   # POST /states.json
   def create
     @state = State.new(params[:state])
-
+	
+	
     respond_to do |format|
       if @state.save
-        format.html { redirect_to @state, notice: 'State was successfully created.' }
+      	@page = Page.find(@state.page_id);
+        format.html { redirect_to @page, notice: 'State was successfully created.' }
         format.json { render json: @state, status: :created, location: @state }
       else
         format.html { render action: "new" }

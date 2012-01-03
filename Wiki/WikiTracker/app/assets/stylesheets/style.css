@@ -200,7 +200,7 @@ a:hover {
 #page {
 	width: 890px;
 	margin: 0 auto;
-	padding: 30px 55px;
+	padding: 10px 55px;
 	background: url(images/img03.jpg) repeat-y left top;
 }
 
@@ -215,7 +215,7 @@ a:hover {
 
 .post {
 	overflow: hidden;
-	margin-bottom: 40px;
+	margin-bottom: 10px;
 	border-bottom: 1px dotted #E7E2DC;
 }
 
@@ -590,7 +590,7 @@ table tr td:first-child {
 
 /* clean gray
 *******************************************************************************/
-button.clean-gray {
+.clean-gray {
   background-color: #eeeeee;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#cccccc));
   /* Saf4+, Chrome */
@@ -613,7 +613,7 @@ button.clean-gray {
   text-align: center;
   text-shadow: 0 1px 0 #eee;
   width: 150px; }
-  button.clean-gray:hover {
+  .clean-gray:hover {
     background-color: #dddddd;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#dddddd), to(#bbbbbb));
     /* Saf4+, Chrome */
@@ -626,7 +626,7 @@ button.clean-gray {
     border-bottom: 1px solid #999;
     cursor: pointer;
     text-shadow: 0 1px 0 #ddd; }
-  button.clean-gray:active {
+  .clean-gray:active {
     border: 1px solid #aaa;
     border-bottom: 1px solid #888;
     -webkit-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
@@ -634,3 +634,13 @@ button.clean-gray {
     -ms-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
     -o-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
     box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee; }
+    
+.button_to {
+	display:inline-block;
+	text-transform:uppercase;
+	margin-right:10px;
+}
+
+.hidden {
+	display:none;
+}
