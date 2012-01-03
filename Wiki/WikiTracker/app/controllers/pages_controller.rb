@@ -17,8 +17,10 @@ def get_related_comments
   end
   
   def get_related_states
-	@states = State.where("page_id = ?",params[:id])
+	@states = State.where("page_id = ?",params[:id]).joins(:user).select("states.*, users.name AS name").order("updated_at DESC")
 	@page_id = params[:id]
+	
+	@page = Page.find(@page_id)
 	respond_to do |format|
       format.html # get_related_states.html.erb
       format.json { render json: @states }

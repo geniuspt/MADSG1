@@ -3,8 +3,8 @@
 <%= raw(RedClothCustom.new(@state.body)) %>
 
 <br/>
-<p class="meta"><span class="date"><%= @state.page %></span><span class="posted">Last edited by <a href="#"><%= @state.user %></a> at November 7, 2011</span></p>	
+<p class="meta"><span class="date"><%= @page.name %></span><span class="posted">Last edited by <a href="#"><%= @state.name %></a> at <%= @state.updated_at %></span></p>	
 <br/>
 
-<%= link_to 'Edit', edit_state_path(@state) %> |
-<%= link_to 'Back', states_path %>
+
+<%= button_to 'Back', {:controller => "pages", :action => "show", :id => @page.id}, :class => 'clean-gray' %>

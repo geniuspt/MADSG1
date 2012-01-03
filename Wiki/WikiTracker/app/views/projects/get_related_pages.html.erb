@@ -16,6 +16,5 @@
 <br/>
 
 <%= button_to 'New Page', {:controller => "pages", :action => "new", :id => @project_id}, :class=> 'clean-gray'  %>
-<%= button_to 'Back', pages_path, :class=> 'clean-gray' %>
-
+<%= button_to 'Back', {:controller => "projects", :action => "index"}, :class=> 'clean-gray'  %>
 

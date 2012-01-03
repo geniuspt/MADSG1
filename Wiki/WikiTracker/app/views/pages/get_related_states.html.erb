@@ -1,20 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-
+<h1>States from <%= @page.name %></h1>
+  
 <% @states.each do |state| %>
 
+<div id="content">
+  <div style="float:right; margin-top:15px;"><%= button_to 'View state',  {:controller => "states", :action => "show", :id => state.id}, :class => 'clean-gray' %></div>
 <p>
   <b>User:</b>
-  <%= state.user %>
+  <%= state.name %>
 </p>
-
 <p>
-  <b>Body:</b>
-  <%= state.body %>
+  <b>Date:</b>
+  <%= state.updated_at %>
 </p>
 
-
+</div>
 <% end %>
 
-<%= link_to 'New state', :controller => "states", :action => "new", :id => @page_id  %> |
-<%= link_to 'Back', pages_path %>
+<%= button_to 'Back',  {:controller => "pages", :action => "show", :id => @page_id}, :class => 'clean-gray' %>

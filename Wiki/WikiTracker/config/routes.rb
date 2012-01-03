@@ -2,9 +2,13 @@ WikiTracker::Application.routes.draw do
   resources :memberships
 
   resources :comment_stories
-
+  match 'projects/get_related_pages' => 'projects#get_related_pages'
+    match 'projects/index' => 'projects#index'
   resources :user_stories
   match 'comments/new' => 'comments#new'
+  match 'projects/new' => 'pages#new'
+  match 'pages/new' => 'pages#new'
+  match 'states/new' => 'states#new'
   
   match 'about/' => 'about#index'
 
@@ -24,12 +28,15 @@ WikiTracker::Application.routes.draw do
 	get 'get_related_states'
    end
   end
+  
+  match 'pages/get_related_comments' => 'pages#get_related_comments'
+  match 'pages/get_related_states' => 'pages#get_related_states'
+
+  
   match 'pages/new' => 'pages#new'
   resources :pages do
    collection do
     get 'get_last_state'
-	get 'get_related_states'
-	get 'get_related_comments'
    end
   end
   
@@ -43,6 +50,7 @@ WikiTracker::Application.routes.draw do
   end
 
   match 'pages/:id' => 'pages#show'
+  match 'states/:id' => 'states#show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

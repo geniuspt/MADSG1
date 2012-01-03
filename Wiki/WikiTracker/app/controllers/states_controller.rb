@@ -19,8 +19,8 @@ class StatesController < ApplicationController
   # GET /states/1
   # GET /states/1.json
   def show
-    @state = State.find(params[:id])
-
+    @state = State.where("states.id = ?",params[:id]).joins(:user).select("states.*, users.name AS name").first
+    @page = Page.find(@state.page_id)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @state }
