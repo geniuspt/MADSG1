@@ -9,6 +9,7 @@ class ProjectsController < ApplicationController
 #
   def get_related_pages
     @pages = Page.where("project_id=?",params[:id])
+    @project_id = params[:id]
     
     respond_to do |format|
       format.html  # get_related_pages.html.erb

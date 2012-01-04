@@ -1,9 +1,13 @@
-Feature: Addition
-  In order to avoid silly mistakes
-  As a math idiot 
-  I want to be told the sum of two numbers
+Feature: Get User Stories
+  In order to know many user stories i have
+  As a developer 
+  I want to be told the number of existing user stories
 
-  Scenario Outline: Retrieve related pages correctly
-    Given I have entered id 1 into the function get_related_pages
-	When i press enter
-	Then the page.user_id result should be 1
+  Scenario Outline: Retrieve related user stories correctly
+	Given I have entered id <input_1> into the function getByProject
+    When I ask for related user stories
+    Then the result should have <number> elements
+    
+  Examples:
+    | input_1     | number  | 
+    | 416129      | 7       | 

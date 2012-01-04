@@ -7,7 +7,7 @@
 
 
 <%= button_to 'Show Pages', {:controller => "projects", :action => "get_related_pages", :id => @project.id},:class => 'clean-gray' %>
-<%= button_to 'List User Stories', {:controller => "user_stories", :action => "index", :id => @project.pivotal_id}, :class => 'clean-gray' %>
+<%= button_to 'List User Stories', {:controller => "user_stories", :action => "getByProject", :id => @project.pivotal_id}, :class => 'clean-gray' %>
 <%= button_to 'Edit', edit_project_path(@project), :class => 'clean-gray' %>
 <%= button_to 'Back', projects_path, :class => 'clean-gray' %>
 

@@ -93,7 +93,7 @@ class UserStoriesController < ApplicationController
     @user_story.destroy
 	
     respond_to do |format|
-      format.html { redirect_to :controller => "user_stories", :action => "index", :id => @project.pivotal_id }
+      format.html { redirect_to :controller => "user_stories", :action => "getByProject", :id => @project.pivotal_id }
       format.json { head :ok }
     end
   end

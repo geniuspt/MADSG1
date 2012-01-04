@@ -91,6 +91,7 @@ def get_related_comments
   def new
     @page = Page.new
 	@page.project_id = params[:id]
+	@project_id = params[:id]
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @page }

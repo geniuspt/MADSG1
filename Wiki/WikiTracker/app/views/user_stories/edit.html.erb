@@ -1,6 +1,6 @@
-<h1>Editing user_story</h1>
+<h1>Editing User story</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @user_story %> |
-<%= link_to 'Back', :controller => "user_stories", :action => "getByProject", :id => @user_story.project_id %>
+<%= button_to 'Show', @user_story, :class=> 'clean-gray' %>
+<%= button_to 'Back', { :controller => "user_stories", :action => "getByProject", :id => @user_story.project_id}, :class=> 'clean-gray' %>

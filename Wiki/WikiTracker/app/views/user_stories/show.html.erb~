@@ -45,5 +45,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_user_story_path(@user_story) %> |
-<%= link_to 'Back', :controller => "user_stories", :action => "getByProject", :id => @user_story.pivotal_id%>
+<%= link_to 'Edit', edit_user_story_path(@user_story) , :class => 'clean-gray'%>
+<%= button_to 'Back', {:controller => "user_stories", :action => "getByProject", :id => @user_story.project_id}, :class => 'clean-gray' %>

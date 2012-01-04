@@ -24,4 +24,5 @@
 
 <br />
 
-<%= link_to 'New User story', :controller => "user_stories", :action => "new", :id => @project.pivotal_id %>
+<%= button_to 'New User story', {:controller => "user_stories", :action => "new", :id => @project.pivotal_id}, :class => 'clean-gray'%>
+<%= button_to 'Back', {:controller => "projects", :action => "show", :id => @project.id}, :class => 'clean-gray' %>

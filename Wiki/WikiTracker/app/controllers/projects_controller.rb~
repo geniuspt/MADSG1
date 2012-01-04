@@ -72,8 +72,6 @@ class ProjectsController < ApplicationController
 #   - +id+ -> project identification
 # * *Returns* :
 #   - edited project
-# * *Raises* :
-#   - +Error+ -> if action of editing project fails
 #
   # GET /projects/1/edit
   def edit

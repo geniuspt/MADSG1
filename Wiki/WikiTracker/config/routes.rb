@@ -2,8 +2,13 @@ WikiTracker::Application.routes.draw do
   resources :memberships
 
   resources :comment_stories
-  match 'projects/get_related_pages' => 'projects#get_related_pages'
+  match 'user_stories/:id/edit' => 'user_stories#edit'
+  match 'projects/new' => 'projects#new'
+  match 'projects/:id/edit' => 'projects#edit'
   match 'projects/index' => 'projects#index'
+  match 'projects/get_related_pages' => 'projects#get_related_pages'
+  match 'projects/:id' => 'projects#show'
+  
 match 'user_stories/getByProject' => 'user_stories#getByProject' 	  
 resources :user_stories
   #match 'user_stories/' => 'user_stories#index'	
@@ -11,7 +16,7 @@ resources :user_stories
   match 'comments/new' => 'comments#new'
   match 'pages/new' => 'pages#new'
   match 'states/new' => 'states#new'
-  
+  match 'user_stories/new' => 'user_stories#new'
   match 'about/' => 'about#index'
 
   get "home/index"

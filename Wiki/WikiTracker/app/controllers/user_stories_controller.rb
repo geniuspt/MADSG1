@@ -87,7 +87,7 @@ class UserStoriesController < ApplicationController
     @user_story = UserStory.find(params[:id])
     @project = Project.find(:first, :conditions => [ "pivotal_id = ? ",@user_story.project_id])	
     PivotalTracker::Client.token = @project.pivotal_token 
-    @a_project = PivotalTracker::Project.find(416129) 
+    @a_project = PivotalTracker::Project.find(@project.pivotal_id) 
     @qq =  @a_project.stories.find(@user_story.id_pivotal)
     @qq.delete
     @user_story.destroy
