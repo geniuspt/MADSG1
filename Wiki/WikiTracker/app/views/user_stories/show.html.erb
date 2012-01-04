@@ -46,4 +46,4 @@
 
 
 <%= link_to 'Edit', edit_user_story_path(@user_story) %> |
-<%= link_to 'Back', user_stories_path %>
+<%= link_to 'Back', :controller => "user_stories", :action => "getByProject", :id => @user_story.project_id%>

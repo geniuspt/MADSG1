@@ -16,6 +16,11 @@
     <%= f.text_field :name %>
   </div>
 
+<div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
   <a id="unhide_link">Pivotal Tracker Account</a><br /><br />
   <div class="field" id = "user" hidden = true>
     <%= f.label :pivotal_user %><br />
@@ -27,7 +32,7 @@
   </div>
   <div class="field" id = "id" hidden = true>
     <%= f.label :pivotal_id %><br />
-    <%= f.password_field :pivotal_id %><br /><br />
+    <%= f.text_field :pivotal_id %><br /><br />
   </div>
 
   <script type = text/javascript>
@@ -42,6 +47,6 @@
 
 
   <div class="actions">
-    <%= f.submit %>
+    <%=f.submit :class => 'clean-gray' %>
   </div>
 <% end %>

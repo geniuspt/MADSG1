@@ -4,8 +4,7 @@ WikiTracker::Application.routes.draw do
   resources :comment_stories
   match 'projects/get_related_pages' => 'projects#get_related_pages'
   match 'projects/index' => 'projects#index'
-match 'user_stories/getByProject' => 'user_stories#getByProject' 	  
-resources :user_stories
+  resources :user_stories
   #match 'user_stories/' => 'user_stories#index'	
   #match 'user_stories/:id' => 'user_stories#show'	
   match 'comments/new' => 'comments#new'
@@ -42,7 +41,7 @@ resources :user_stories
    end
   end
   
-  
+  match 'user_stories/getByProject' => 'user_stories#getByProject' 	
   match 'projects/new' => 'projects#new'
   
   resources :projects do
